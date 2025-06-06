@@ -21,6 +21,7 @@ interface LoginDialogProps {
   redirectUrl?: string;
 }
 
+
 export function LoginDialog({ open: controlledOpen, onOpenChange, redirectUrl }: LoginDialogProps) {
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false)
   const [account, setAccount] = useState('')
