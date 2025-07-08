@@ -39,13 +39,15 @@ export default function ApiPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-white">
-          智慧報表（開發中）
+        <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl">
+          API <span style={{ color: "#0D99FF" }}>(BDE)</span>
         </h1>
-        <p className="mt-4 text-gray-300 max-w-2xl mx-auto">從每日安全分析中提出應用程式與資料的資安優化建議</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          使用我們的API保護您的應用程式和數據免受各種網路威脅
+        </p>
       </div>
 
-      <Tabs defaultValue="intelligence" className="w-full">
+      <Tabs defaultValue="security" className="w-full">
         <TabsList className="grid w-full md:w-auto md:inline-grid grid-cols-4 md:grid-cols-4 bg-gray-800 border border-gray-700">
           <TabsTrigger
             value="security"
@@ -389,7 +391,7 @@ function ApiMonitoringReport() {
         <Card className="shadow-lg bg-gray-800 border-gray-700">
           <CardHeader>
             <CardTitle className="text-xl text-white">API調用趨勢</CardTitle>
-            <CardDescription className="text-gray-300">過去5個月的API調用量</CardDescription>
+            <CardDescription className="text-gray-300">過去5個月API調用量</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80">
@@ -676,7 +678,7 @@ function ApiAuthorizationReport() {
 }
 
 // 統計卡片組件
-function StatCard({ title, value, description, trend, trendType, icon }:{ title: string, value: string, description: string, trend: string, trendType: string, icon: React.ReactNode }) {
+function StatCard({ title, value, description, trend, trendType, icon }) {
   return (
     <Card className="shadow-lg bg-gray-800 border-gray-700">
       <CardContent className="p-6">
@@ -716,7 +718,7 @@ function StatCard({ title, value, description, trend, trendType, icon }:{ title:
 }
 
 // 安全事件組件
-function SecurityEvent({ type, title, time, description, status }:{ type: string, title: string, time: string, description: string, status: string }) {
+function SecurityEvent({ type, title, time, description, status }) {
   let typeColor = "bg-blue-100 text-blue-800"
   let statusColor = "bg-blue-100 text-blue-800"
 
@@ -762,7 +764,7 @@ function SecurityEvent({ type, title, time, description, status }:{ type: string
 }
 
 // API列表項組件
-function ApiListItem({ name, method, category, lastUpdated, status }:{ name: string, method: string, category: string, lastUpdated: string, status: string }) {
+function ApiListItem({ name, method, category, lastUpdated, status }) {
   let methodColor = "bg-blue-100 text-blue-800"
   let statusColor = "text-green-500"
   let statusIcon = <CheckCircle className="h-4 w-4" />
@@ -818,7 +820,7 @@ function ApiListItem({ name, method, category, lastUpdated, status }:{ name: str
 }
 
 // 授權事件組件
-function AuthEvent({ type, title, time, description, method }:{ type: string, title: string, time: string, description: string, method: string }) {
+function AuthEvent({ type, title, time, description, method }) {
   let typeColor = "bg-green-100 text-green-800"
   let typeIcon = <CheckCircle className="h-6 w-6 text-green-500" />
 

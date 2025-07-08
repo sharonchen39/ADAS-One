@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, CheckCircle, TrendingUp, Eye, Server, Zap } from "lucide-react"
+import { Shield, CheckCircle, TrendingUp, Eye, Server, Zap, Lock, Users } from "lucide-react"
 import Link from "next/link"
 import {
   BarChart,
@@ -22,24 +22,24 @@ import {
   Area,
 } from "recharts"
 
-export default function DDoSProtectionPage() {
+export default function RateLimitingPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Page Title */}
       <div className="text-center mb-16">
         <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl">
-          應用層<span style={{ color: "#0D99FF" }}>DDoS防禦</span>
+          Rate Limiting<span style={{ color: "#0D99FF" }}>限速</span>
         </h1>
         <p className="mt-4 text-gray-700 dark:text-gray-300 text-lg font-normal max-w-2xl mx-auto">
-          防範任何規模或類型的 DDoS 攻擊
+          透過限制超過定義限制的流量，保護應用程式和 API 免遭濫用
         </p>
         <p className="mt-2 text-gray-600 dark:text-gray-400 font-normal max-w-3xl mx-auto">
-          提供強大的DDoS防護能力，確保您的服務持續可用，無論面對何種規模的攻擊都能有效防禦
+          限速可提供保護來抵禦阻斷服務攻擊、暴力登入嘗試、流量激增，以及針對 API 和應用程式的其他類型的濫用。
         </p>
       </div>
 
       {/* Service Features List */}
-      <section className="py-12 bg-card rounded-lg shadow-lg border-border mb-16">
+      <section className="py-12 bg-card rounded-lg shadow-lg border border-border mb-16">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
             服務<span style={{ color: "#0D99FF" }}>特色</span>
@@ -48,33 +48,33 @@ export default function DDoSProtectionPage() {
             <ul className="space-y-6">
               <ServiceFeatureItem
                 icon={<Shield className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="多層防護"
-                description="提供L3/L4/L7多層次DDoS防護，全面抵禦各種攻擊類型"
+                title="緩解 DDoS 攻擊"
+                description="使用精細化設定選項阻止高準度的第 7 層攻擊，有效防禦各種 DDoS 攻擊模式"
               />
               <ServiceFeatureItem
-                icon={<Zap className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="即時檢測"
-                description="毫秒級攻擊檢測和響應，確保服務不中斷"
+                icon={<Lock className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+                title="保護客戶資料"
+                description="抵禦試圖盜用帳戶和竊取敏感性資訊的暴力登入攻擊，確保用戶資料安全"
               />
               <ServiceFeatureItem
                 icon={<Server className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="無限防護容量"
-                description="提供無上限的DDoS防護容量，應對任何規模的攻擊"
+                title="確保 API 可用性"
+                description="透過基於要求的任何參數對流量進行限速，以較高的準確度識別濫用流量"
               />
               <ServiceFeatureItem
                 icon={<Eye className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="智能分析"
-                description="AI驅動的攻擊模式識別，持續學習新的攻擊手法"
+                title="即時監控"
+                description="24/7 監控流量模式，即時檢測異常請求並自動觸發限速機制"
+              />
+              <ServiceFeatureItem
+                icon={<Zap className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+                title="彈性配置"
+                description="支援多種限速策略，可根據不同業務需求靈活調整限制參數"
               />
               <ServiceFeatureItem
                 icon={<TrendingUp className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="自動擴展"
-                description="根據攻擊強度自動調整防護策略和資源配置"
-              />
-              <ServiceFeatureItem
-                icon={<CheckCircle className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="零誤判"
-                description="精確識別正常流量和攻擊流量，確保業務不受影響"
+                title="智能分析"
+                description="提供詳細的流量分析報告，幫助優化限速策略和提升防護效果"
               />
             </ul>
           </div>
@@ -84,66 +84,55 @@ export default function DDoSProtectionPage() {
       {/* Analytics Dashboard */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
-          防護<span style={{ color: "#0D99FF" }}>分析</span>
+          限速<span style={{ color: "#0D99FF" }}>分析</span>
         </h2>
-        <DDoSAnalytics />
+        <RateLimitingAnalytics />
       </section>
 
       {/* Pricing Section */}
-      <section className="py-12 bg-card rounded-lg shadow-lg border-border">
+      <section className="py-12 bg-card rounded-lg shadow-lg border border-border">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
-            應用層DDoS防禦<span style={{ color: "#0D99FF" }}>方案</span>
+            Rate Limiting<span style={{ color: "#0D99FF" }}>方案</span>
           </h2>
 
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* 基礎版方案 */}
             <Card className="bg-card border-border shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl font-medium text-foreground">應用層DDoS防禦方案</CardTitle>
+                <CardTitle className="text-2xl font-medium text-foreground">基礎版</CardTitle>
                 <CardDescription className="font-normal text-muted-foreground">
-                  全面的DDoS攻擊防護解決方案
+                  基於IP，保護未經驗證的端點
                 </CardDescription>
                 <div className="mt-6">
-                  <span className="text-5xl font-medium text-foreground">$2萬</span>
+                  <span className="text-4xl font-medium text-foreground">$3萬</span>
                   <span className="text-muted-foreground font-normal text-lg">/月起</span>
                 </div>
+                <p className="text-xs text-gray-500 font-normal mt-2">計價單位: (Request/月/100rules)</p>
               </CardHeader>
               <CardContent className="space-y-6">
                 <ul className="space-y-3 text-left">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">多層DDoS防護</span>
+                    <span className="text-muted-foreground font-normal">基於IP的限速保護</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">即時攻擊檢測</span>
+                    <span className="text-muted-foreground font-normal">保護未經驗證的端點</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">無限防護容量</span>
+                    <span className="text-muted-foreground font-normal">限制特定IP位址請求數量</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">AI智能分析</span>
+                    <span className="text-muted-foreground font-normal">處理重複攻擊者濫用</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">自動資源擴展</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">零誤判保證</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">24/7專業支持</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">詳細攻擊報告</span>
+                    <span className="text-muted-foreground font-normal">基礎技術支持</span>
                   </li>
                 </ul>
-
                 <div className="pt-6">
                   <Link href="/account/purchase">
                     <Button
@@ -152,7 +141,71 @@ export default function DDoSProtectionPage() {
                       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#0A85E9")}
                       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0D99FF")}
                     >
-                      立即購買
+                      選擇基礎版
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 進階版方案 */}
+            <Card className="bg-card border-border shadow-lg ring-2 ring-blue-600">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-2xl font-medium text-foreground">進階版</CardTitle>
+                    <CardDescription className="font-normal text-muted-foreground">
+                      基於IP及其他多種參數的全面限速
+                    </CardDescription>
+                  </div>
+                  <div className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">推薦</div>
+                </div>
+                <div className="mt-6">
+                  <span className="text-4xl font-medium text-foreground">$7萬</span>
+                  <span className="text-muted-foreground font-normal text-lg">/月起</span>
+                </div>
+                <p className="text-xs text-gray-500 font-normal mt-2">計價單位: (Request/月/100rules)</p>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <ul className="space-y-3 text-left">
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">包含基礎版所有功能</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">基於Query參數限速</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">Host、Headers、Cookie限速</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">ASN、Country、Path限速</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">高級流量分析</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">自定義限速規則</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
+                    <span className="text-muted-foreground font-normal">24/7專屬技術支持</span>
+                  </li>
+                </ul>
+                <div className="pt-6">
+                  <Link href="/account/purchase">
+                    <Button
+                      className="w-full text-white font-normal py-3 text-lg"
+                      style={{ backgroundColor: "#0D99FF", borderColor: "#0D99FF" }}
+                      onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#0A85E9")}
+                      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0D99FF")}
+                    >
+                      選擇進階版
                     </Button>
                   </Link>
                 </div>
@@ -163,7 +216,7 @@ export default function DDoSProtectionPage() {
           <div className="mt-12 text-center">
             <h3 className="text-2xl font-medium text-foreground mb-4">需要客製化方案？</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8 font-normal">
-              我們的專家團隊將協助您評估DDoS威脅風險，制定最適合的防護策略
+              我們的專家團隊將協助您評估流量模式，制定最適合的限速策略
             </p>
             <Button
               variant="outline"
@@ -197,40 +250,40 @@ function ServiceFeatureItem({ icon, title, description }) {
   )
 }
 
-function DDoSAnalytics() {
+function RateLimitingAnalytics() {
   // 模擬數據
-  const attackData = [
-    { name: "1月", 容量攻擊: 25, 協議攻擊: 18, 應用層攻擊: 32, 混合攻擊: 12 },
-    { name: "2月", 容量攻擊: 22, 協議攻擊: 15, 應用層攻擊: 28, 混合攻擊: 10 },
-    { name: "3月", 容量攻擊: 35, 協議攻擊: 24, 應用層攻擊: 42, 混合攻擊: 18 },
-    { name: "4月", 容量攻擊: 18, 協議攻擊: 12, 應用層攻擊: 25, 混合攻擊: 8 },
-    { name: "5月", 容量攻擊: 15, 協議攻擊: 10, 應用層攻擊: 22, 混合攻擊: 6 },
-    { name: "6月", 容量攻擊: 12, 協議攻擊: 8, 應用層攻擊: 18, 混合攻擊: 4 },
+  const requestData = [
+    { name: "1月", 正常請求: 8500, 限速請求: 1250, 阻擋請求: 1180 },
+    { name: "2月", 正常請求: 9200, 限速請求: 1100, 阻擋請求: 1050 },
+    { name: "3月", 正常請求: 10500, 限速請求: 1350, 阻擋請求: 1280 },
+    { name: "4月", 正常請求: 11800, 限速請求: 980, 阻擋請求: 920 },
+    { name: "5月", 正常請求: 12500, 限速請求: 850, 阻擋請求: 800 },
+    { name: "6月", 正常請求: 13200, 限速請求: 720, 阻擋請求: 680 },
   ]
 
-  const mitigationData = [
-    { name: "1月", 檢測時間: 15, 緩解時間: 45 },
-    { name: "2月", 檢測時間: 12, 緩解時間: 38 },
-    { name: "3月", 檢測時間: 10, 緩解時間: 32 },
-    { name: "4月", 檢測時間: 8, 緩解時間: 28 },
-    { name: "5月", 檢測時間: 6, 緩解時間: 22 },
-    { name: "6月", 檢測時間: 4, 緩解時間: 18 },
+  const rateLimitEfficiencyData = [
+    { name: "1月", 阻擋率: 94.4 },
+    { name: "2月", 阻擋率: 95.5 },
+    { name: "3月", 阻擋率: 94.8 },
+    { name: "4月", 阻擋率: 93.9 },
+    { name: "5月", 阻擋率: 94.1 },
+    { name: "6月", 阻擋率: 94.4 },
   ]
 
   const attackTypeData = [
-    { name: "容量攻擊", value: 35, color: "#ef4444" },
-    { name: "協議攻擊", value: 25, color: "#f97316" },
-    { name: "應用層攻擊", value: 30, color: "#eab308" },
-    { name: "混合攻擊", value: 10, color: "#a3a3a3" },
+    { name: "暴力登入", value: 35, color: "#ef4444" },
+    { name: "API濫用", value: 30, color: "#f97316" },
+    { name: "DDoS攻擊", value: 25, color: "#eab308" },
+    { name: "其他攻擊", value: 10, color: "#a3a3a3" },
   ]
 
-  const trafficVolumeData = [
-    { name: "1月", 正常流量: 850, 攻擊流量: 87 },
-    { name: "2月", 正常流量: 920, 攻擊流量: 75 },
-    { name: "3月", 正常流量: 1050, 攻擊流量: 119 },
-    { name: "4月", 正常流量: 1180, 攻擊流量: 63 },
-    { name: "5月", 正常流量: 1300, 攻擊流量: 53 },
-    { name: "6月", 正常流量: 1450, 攻擊流量: 42 },
+  const responseTimeData = [
+    { name: "1月", 響應時間: 8 },
+    { name: "2月", 響應時間: 7 },
+    { name: "3月", 響應時間: 6 },
+    { name: "4月", 響應時間: 5 },
+    { name: "5月", 響應時間: 4 },
+    { name: "6月", 響應時間: 3 },
   ]
 
   return (
@@ -238,36 +291,36 @@ function DDoSAnalytics() {
       {/* 統計卡片 */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatCard
-          title="攻擊阻擋"
-          value="42"
-          description="本月阻擋攻擊次數"
-          trend="-20.8%"
+          title="限速規則"
+          value="156"
+          description="活躍限速規則數量"
+          trend="+8.3%"
           trendType="positive"
           icon={<Shield className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
         <StatCard
-          title="檢測時間"
-          value="4ms"
-          description="平均攻擊檢測時間"
-          trend="-33.3%"
+          title="阻擋請求"
+          value="680"
+          description="本月阻擋惡意請求"
+          trend="-15.0%"
+          trendType="positive"
+          icon={<Eye className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+        />
+        <StatCard
+          title="響應時間"
+          value="3ms"
+          description="平均限速檢測時間"
+          trend="-25.0%"
           trendType="positive"
           icon={<Zap className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
         <StatCard
-          title="緩解時間"
-          value="18s"
-          description="平均攻擊緩解時間"
-          trend="-18.2%"
+          title="保護用戶"
+          value="13,200"
+          description="本月保護正常請求"
+          trend="+5.6%"
           trendType="positive"
-          icon={<TrendingUp className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-        />
-        <StatCard
-          title="防護成功率"
-          value="99.7%"
-          description="DDoS防護成功率"
-          trend="+0.2%"
-          trendType="positive"
-          icon={<CheckCircle className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+          icon={<Users className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
       </div>
 
@@ -275,22 +328,21 @@ function DDoSAnalytics() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">攻擊類型統計</CardTitle>
-            <CardDescription className="text-muted-foreground">過去6個月的DDoS攻擊類型分佈</CardDescription>
+            <CardTitle className="text-xl text-foreground">請求處理統計</CardTitle>
+            <CardDescription className="text-muted-foreground">過去6個月的請求處理和限速情況</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={attackData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <BarChart data={requestData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                   <XAxis dataKey="name" stroke="#9ca3af" />
                   <YAxis stroke="#9ca3af" />
                   <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
                   <Legend />
-                  <Bar dataKey="容量攻擊" stackId="a" fill="#ef4444" />
-                  <Bar dataKey="協議攻擊" stackId="a" fill="#f97316" />
-                  <Bar dataKey="應用層攻擊" stackId="a" fill="#eab308" />
-                  <Bar dataKey="混合攻擊" stackId="a" fill="#a3a3a3" />
+                  <Bar dataKey="正常請求" fill="#22b866" />
+                  <Bar dataKey="限速請求" fill="#f97316" />
+                  <Bar dataKey="阻擋請求" fill="#ef4444" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -299,20 +351,18 @@ function DDoSAnalytics() {
 
         <Card className="shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">響應時間優化</CardTitle>
-            <CardDescription className="text-muted-foreground">檢測和緩解時間改善趨勢</CardDescription>
+            <CardTitle className="text-xl text-foreground">限速效率趨勢</CardTitle>
+            <CardDescription className="text-muted-foreground">過去6個月的限速阻擋成功率</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
-                <RechartsLineChart data={mitigationData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <RechartsLineChart data={rateLimitEfficiencyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                   <XAxis dataKey="name" stroke="#9ca3af" />
-                  <YAxis stroke="#9ca3af" />
+                  <YAxis domain={[90, 100]} stroke="#9ca3af" />
                   <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
-                  <Legend />
-                  <Line type="monotone" dataKey="檢測時間" stroke="#0D99FF" strokeWidth={2} />
-                  <Line type="monotone" dataKey="緩解時間" stroke="#22b866" strokeWidth={2} />
+                  <Line type="monotone" dataKey="阻擋率" stroke="#0D99FF" strokeWidth={3} />
                 </RechartsLineChart>
               </ResponsiveContainer>
             </div>
@@ -324,7 +374,7 @@ function DDoSAnalytics() {
         <Card className="lg:col-span-1 shadow-lg bg-card border-border">
           <CardHeader>
             <CardTitle className="text-xl text-foreground">攻擊類型分佈</CardTitle>
-            <CardDescription className="text-muted-foreground">DDoS攻擊類型比例</CardDescription>
+            <CardDescription className="text-muted-foreground">被限速阻擋的攻擊類型比例</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-64 flex items-center justify-center">
@@ -353,20 +403,18 @@ function DDoSAnalytics() {
 
         <Card className="lg:col-span-2 shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">流量處理統計</CardTitle>
-            <CardDescription className="text-muted-foreground">正常流量與攻擊流量處理情況</CardDescription>
+            <CardTitle className="text-xl text-foreground">響應時間優化</CardTitle>
+            <CardDescription className="text-muted-foreground">限速檢測響應時間改善趨勢</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={trafficVolumeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <AreaChart data={responseTimeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                   <XAxis dataKey="name" stroke="#9ca3af" />
                   <YAxis stroke="#9ca3af" />
                   <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
-                  <Legend />
-                  <Area type="monotone" dataKey="正常流量" stackId="1" stroke="#22b866" fill="#22b866" />
-                  <Area type="monotone" dataKey="攻擊流量" stackId="1" stroke="#ef4444" fill="#ef4444" />
+                  <Area type="monotone" dataKey="響應時間" stroke="#0D99FF" fill="#0D99FF" fillOpacity={0.3} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>

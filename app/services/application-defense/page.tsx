@@ -27,22 +27,22 @@ export default function ApplicationDefensePage() {
     <div className="container mx-auto px-4 py-12">
       {/* Page Title */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-white">
+        <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl">
           應用層<span style={{ color: "#0D99FF" }}>防禦</span>
         </h1>
-        <p className="mt-4 text-gray-300 text-lg font-normal max-w-2xl mx-auto">
+        <p className="mt-4 text-muted-foreground text-lg font-normal max-w-2xl mx-auto">
           防範任何規模或類型的 DDoS 攻擊，確保您的服務持續可用
         </p>
-        <p className="mt-2 text-gray-400 font-normal max-w-3xl mx-auto">
+        <p className="mt-2 text-muted-foreground font-normal max-w-3xl mx-auto">
           DDoS 攻擊可能會減緩或關閉服務，但我們會阻止所有攻擊。憑藉 388 Tbps
           的網路容量，成功緩解了一些有記錄以來最大規模的 DDoS 攻擊，且並未降低客戶的效能。
         </p>
       </div>
 
       {/* Service Features List */}
-      <section className="py-12 bg-gray-900 rounded-lg shadow-lg border border-gray-800 mb-16">
+      <section className="py-12 bg-card rounded-lg shadow-lg border border-border mb-16">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12 text-white">
+          <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
             服務<span style={{ color: "#0D99FF" }}>特色</span>
           </h2>
           <div className="max-w-4xl mx-auto">
@@ -50,7 +50,7 @@ export default function ApplicationDefensePage() {
               <ServiceFeatureItem
                 icon={<Shield className="h-8 w-8" style={{ color: "#0D99FF" }} />}
                 title="全方位DDoS防護"
-                description="防範L7層的各種DDoS攻擊，包括容量攻擊、協議攻擊和應用層攻擊"
+                description="防範L3/L4/L7層的各種DDoS攻擊，包括容量攻擊、協議攻擊和應用層攻擊"
               />
               <ServiceFeatureItem
                 icon={<Globe className="h-8 w-8" style={{ color: "#0D99FF" }} />}
@@ -84,64 +84,64 @@ export default function ApplicationDefensePage() {
 
       {/* Analytics Dashboard */}
       <section className="mb-16">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-white">
+        <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
           防護<span style={{ color: "#0D99FF" }}>分析</span>
         </h2>
         <ApplicationDefenseAnalytics />
       </section>
 
       {/* Pricing Section */}
-      <section className="py-12 bg-gray-900 rounded-lg shadow-lg border border-gray-800">
+      <section className="py-12 bg-card rounded-lg shadow-lg border border-border">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12 text-white">
+          <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
             應用層防禦<span style={{ color: "#0D99FF" }}>方案</span>
           </h2>
 
           <div className="max-w-2xl mx-auto text-center">
-            <Card className="bg-gray-800 border-gray-700 shadow-lg">
+            <Card className="bg-card border-border shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl font-medium text-white">應用層防禦方案</CardTitle>
-                <CardDescription className="font-normal text-gray-300">
+                <CardTitle className="text-2xl font-medium text-foreground">應用層防禦方案</CardTitle>
+                <CardDescription className="font-normal text-muted-foreground">
                   全面的應用層DDoS攻擊防護解決方案
                 </CardDescription>
                 <div className="mt-6">
-                  <span className="text-5xl font-medium text-white">$2萬</span>
-                  <span className="text-gray-300 font-normal text-lg">/月起</span>
+                  <span className="text-5xl font-medium text-foreground">$2萬</span>
+                  <span className="text-muted-foreground font-normal text-lg">/月起</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <ul className="space-y-3 text-left">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">全方位DDoS防護</span>
+                    <span className="text-muted-foreground font-normal">全方位DDoS防護</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">388 Tbps網路容量</span>
+                    <span className="text-muted-foreground font-normal">388 Tbps網路容量</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">零延遲防護技術</span>
+                    <span className="text-muted-foreground font-normal">零延遲防護技術</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">智能威脅檢測</span>
+                    <span className="text-muted-foreground font-normal">智能威脅檢測</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">全球分散式防護</span>
+                    <span className="text-muted-foreground font-normal">全球分散式防護</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">自適應防護策略</span>
+                    <span className="text-muted-foreground font-normal">自適應防護策略</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">24/7專業技術支持</span>
+                    <span className="text-muted-foreground font-normal">24/7專業技術支持</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-gray-300 font-normal">詳細攻擊分析報告</span>
+                    <span className="text-muted-foreground font-normal">詳細攻擊分析報告</span>
                   </li>
                 </ul>
 
@@ -162,13 +162,13 @@ export default function ApplicationDefensePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-medium text-white mb-4">需要客製化方案？</h3>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8 font-normal">
+            <h3 className="text-2xl font-medium text-foreground mb-4">需要客製化方案？</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8 font-normal">
               我們的專家團隊將協助您評估應用程式架構，制定最適合的DDoS防護策略
             </p>
             <Button
               variant="outline"
-              className="text-white font-normal px-8 py-3 text-lg border-2"
+              className="text-foreground font-normal px-8 py-3 text-lg border-2"
               style={{ borderColor: "#0D99FF", color: "#0D99FF" }}
               onMouseOver={(e) => {
                 e.currentTarget.style.backgroundColor = "rgba(13, 153, 255, 0.1)"
@@ -186,13 +186,13 @@ export default function ApplicationDefensePage() {
   )
 }
 
-function ServiceFeatureItem({ icon, title, description }:{ icon: React.ReactNode, title: string, description: string }) {
+function ServiceFeatureItem({ icon, title, description }) {
   return (
-    <li className="flex items-start space-x-4 p-4 rounded-lg bg-gray-800 border border-gray-700">
+    <li className="flex items-start space-x-4 p-4 rounded-lg bg-muted border border-border">
       <div className="flex-shrink-0 mt-1">{icon}</div>
       <div>
-        <h3 className="text-lg font-medium text-white mb-2">{title}</h3>
-        <p className="text-gray-300 font-normal">{description}</p>
+        <h3 className="text-lg font-medium text-foreground mb-2">{title}</h3>
+        <p className="text-muted-foreground font-normal">{description}</p>
       </div>
     </li>
   )
@@ -274,19 +274,25 @@ function ApplicationDefenseAnalytics() {
 
       {/* 圖表區域 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="shadow-lg bg-gray-800 border-gray-700">
+        <Card className="shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-white">攻擊量統計</CardTitle>
-            <CardDescription className="text-gray-300">過去6個月的攻擊次數、強度和阻擋情況</CardDescription>
+            <CardTitle className="text-xl text-foreground">攻擊量統計</CardTitle>
+            <CardDescription className="text-muted-foreground">過去6個月的攻擊次數、強度和阻擋情況</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={attackVolumeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                  <XAxis dataKey="name" stroke="#9ca3af" />
-                  <YAxis stroke="#9ca3af" />
-                  <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" />
+                  <YAxis stroke="hsl(var(--muted-foreground))" />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--card))",
+                      borderColor: "hsl(var(--border))",
+                      color: "hsl(var(--foreground))",
+                    }}
+                  />
                   <Legend />
                   <Bar dataKey="攻擊次數" fill="#ef4444" />
                   <Bar dataKey="阻擋成功" fill="#22b866" />
@@ -296,19 +302,25 @@ function ApplicationDefenseAnalytics() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg bg-gray-800 border-gray-700">
+        <Card className="shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-white">服務性能趨勢</CardTitle>
-            <CardDescription className="text-gray-300">服務可用性和響應時間改善情況</CardDescription>
+            <CardTitle className="text-xl text-foreground">服務性能趨勢</CardTitle>
+            <CardDescription className="text-muted-foreground">服務可用性和響應時間改善情況</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <RechartsLineChart data={performanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                  <XAxis dataKey="name" stroke="#9ca3af" />
-                  <YAxis stroke="#9ca3af" />
-                  <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" />
+                  <YAxis stroke="hsl(var(--muted-foreground))" />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--card))",
+                      borderColor: "hsl(var(--border))",
+                      color: "hsl(var(--foreground))",
+                    }}
+                  />
                   <Legend />
                   <Line type="monotone" dataKey="可用性" stroke="#22b866" strokeWidth={2} />
                   <Line type="monotone" dataKey="響應時間" stroke="#0D99FF" strokeWidth={2} />
@@ -320,10 +332,10 @@ function ApplicationDefenseAnalytics() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card className="lg:col-span-1 shadow-lg bg-gray-800 border-gray-700">
+        <Card className="lg:col-span-1 shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-white">攻擊類型分佈</CardTitle>
-            <CardDescription className="text-gray-300">檢測到的DDoS攻擊類型比例</CardDescription>
+            <CardTitle className="text-xl text-foreground">攻擊類型分佈</CardTitle>
+            <CardDescription className="text-muted-foreground">檢測到的DDoS攻擊類型比例</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-64 flex items-center justify-center">
@@ -343,26 +355,38 @@ function ApplicationDefenseAnalytics() {
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
-                  <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--card))",
+                      borderColor: "hsl(var(--border))",
+                      color: "hsl(var(--foreground))",
+                    }}
+                  />
                 </RechartsPieChart>
               </ResponsiveContainer>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="lg:col-span-2 shadow-lg bg-gray-800 border-gray-700">
+        <Card className="lg:col-span-2 shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-white">緩解時間優化</CardTitle>
-            <CardDescription className="text-gray-300">攻擊檢測和緩解時間改善趨勢</CardDescription>
+            <CardTitle className="text-xl text-foreground">緩解時間優化</CardTitle>
+            <CardDescription className="text-muted-foreground">攻擊檢測和緩解時間改善趨勢</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={mitigationTimeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                  <XAxis dataKey="name" stroke="#9ca3af" />
-                  <YAxis stroke="#9ca3af" />
-                  <Tooltip contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", color: "#ffffff" }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" />
+                  <YAxis stroke="hsl(var(--muted-foreground))" />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--card))",
+                      borderColor: "hsl(var(--border))",
+                      color: "hsl(var(--foreground))",
+                    }}
+                  />
                   <Legend />
                   <Area type="monotone" dataKey="檢測時間" stackId="1" stroke="#0D99FF" fill="#0D99FF" />
                   <Area type="monotone" dataKey="緩解時間" stackId="1" stroke="#5591BD" fill="#5591BD" />
@@ -376,17 +400,17 @@ function ApplicationDefenseAnalytics() {
   )
 }
 
-function StatCard({ title, value, description, trend, trendType, icon }:{ title: string, value: string, description: string, trend: string, trendType: string, icon: React.ReactNode }) {
+function StatCard({ title, value, description, trend, trendType, icon }) {
   return (
-    <Card className="shadow-lg bg-gray-800 border-gray-700">
+    <Card className="shadow-lg bg-card border-border">
       <CardContent className="p-6">
         <div className="flex justify-between items-start">
           <div>
-            <p className="text-sm font-medium text-gray-300">{title}</p>
-            <p className="text-3xl font-bold text-white mt-2">{value}</p>
-            <p className="text-sm text-gray-400 mt-1">{description}</p>
+            <p className="text-sm font-medium text-muted-foreground">{title}</p>
+            <p className="text-3xl font-bold text-foreground mt-2">{value}</p>
+            <p className="text-sm text-muted-foreground mt-1">{description}</p>
           </div>
-          <div className="bg-gray-700 p-3 rounded-full">{icon}</div>
+          <div className="bg-slate-100 dark:bg-gray-700 p-3 rounded-full">{icon}</div>
         </div>
         <div
           className={`mt-4 flex items-center text-sm ${trendType === "positive" ? "text-green-500" : "text-red-500"}`}

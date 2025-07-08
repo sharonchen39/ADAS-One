@@ -2,24 +2,27 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Bot, Users, CheckCircle, TrendingUp, Eye, Zap } from "lucide-react"
+import { Shield, Server, CheckCircle, TrendingUp, Zap } from "lucide-react"
 import Link from "next/link"
 
-export default function BotDefensePage() {
+export default function DNSProtectionPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Page Title */}
       <div className="text-center mb-16">
         <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl">
-          機器人<span style={{ color: "#0D99FF" }}>防禦</span>
+          DNS<span style={{ color: "#0D99FF" }}>防護</span>
         </h1>
-        <p className="mt-4 text-muted-foreground text-lg font-normal max-w-2xl mx-auto">
-          識別並阻止惡意機器人流量，保護您的網站免受自動化攻擊
+        <p className="mt-4 text-gray-700 dark:text-gray-300 text-lg font-normal max-w-2xl mx-auto">
+          阻止針對 DNS 系統的超大規模攻擊
+        </p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400 font-normal max-w-3xl mx-auto">
+          我們的DNS防護系統提供全面的DNS安全解決方案，能夠檢測和緩解各種DNS攻擊，包括DNS放大攻擊、DNS隧道攻擊、DNS劫持等，確保您的域名解析服務穩定可靠。
         </p>
       </div>
 
       {/* Service Features List */}
-      <section className="py-12 bg-card rounded-lg shadow-lg border-border mb-16">
+      <section className="py-12 bg-card rounded-lg shadow-lg border border-border mb-16">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
             服務<span style={{ color: "#0D99FF" }}>特色</span>
@@ -27,34 +30,19 @@ export default function BotDefensePage() {
           <div className="max-w-4xl mx-auto">
             <ul className="space-y-6">
               <ServiceFeatureItem
-                icon={<Bot className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="智能機器人檢測"
-                description="使用機器學習算法識別惡意機器人，區分正常用戶和自動化攻擊"
+                icon={<Zap className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+                title="快速響應"
+                description="可提供安全和具有復原能力的 DNS 服務，它具有最快速的回應時間（平均 11 毫秒）、無與倫比的備援（位置分佈於超過 330 座城市）以及進階安全性。"
               />
               <ServiceFeatureItem
                 icon={<Shield className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="行為分析"
-                description="分析訪問模式和行為特徵，即時識別異常的自動化行為"
+                title="DNS攻擊防護"
+                description="Cloudflare 提供內建 無限和非計量 DDoS 保護和一鍵式 DNSSEC，以確保您的應用程式始終獲得保護，以免受到 DNS 攻擊。"
               />
               <ServiceFeatureItem
-                icon={<Zap className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="即時阻擋"
-                description="毫秒級響應，即時阻擋惡意機器人請求，保護網站資源"
-              />
-              <ServiceFeatureItem
-                icon={<Eye className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="流量監控"
-                description="24/7監控網站流量，識別爬蟲、刷票機器人等惡意行為"
-              />
-              <ServiceFeatureItem
-                icon={<Users className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="白名單管理"
-                description="支持搜索引擎等合法機器人白名單，確保正常業務不受影響"
-              />
-              <ServiceFeatureItem
-                icon={<TrendingUp className="h-8 w-8" style={{ color: "#0D99FF" }} />}
-                title="智能學習"
-                description="持續學習新的攻擊模式，自動更新防護策略"
+                icon={<CheckCircle className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+                title="憑證管理"
+                description="TLS 憑證管理自動周期更新，確保憑證保持有效。"
               />
             </ul>
           </div>
@@ -66,53 +54,55 @@ export default function BotDefensePage() {
         <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
           防護<span style={{ color: "#0D99FF" }}>分析</span>
         </h2>
-        <BotDefenseAnalytics />
+        <DNSProtectionAnalytics />
       </section>
 
       {/* Pricing Section */}
-      <section className="py-12 bg-card rounded-lg shadow-lg border-border">
+      <section className="py-12 bg-card rounded-lg shadow-lg border border-border">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-semibold text-center mb-12 text-foreground">
-            機器人防禦<span style={{ color: "#0D99FF" }}>方案</span>
+            DNS防護<span style={{ color: "#0D99FF" }}>方案</span>
           </h2>
 
           <div className="max-w-2xl mx-auto text-center">
             <Card className="bg-card border-border shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl font-medium text-foreground">機器人防禦方案</CardTitle>
+                <CardTitle className="text-2xl font-medium text-foreground">DNS防護方案</CardTitle>
                 <CardDescription className="font-normal text-muted-foreground">
-                  全面的機器人防護解決方案
+                  全面的DNS安全防護解決方案
                 </CardDescription>
                 <div className="mt-6">
-                  <span className="text-5xl font-medium text-foreground">$5萬</span>
+                  <span className="text-muted-foreground font-normal text-lg">$</span>
+                  <span className="text-5xl font-medium text-foreground">5萬</span>
                   <span className="text-muted-foreground font-normal text-lg">/月起</span>
                 </div>
+                <p className="text-xs text-gray-500 font-normal mt-2">計價單位：(應用程式數量/請求數）</p>
               </CardHeader>
               <CardContent className="space-y-6">
                 <ul className="space-y-3 text-left">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">智能機器人檢測</span>
+                    <span className="text-muted-foreground font-normal">DNS攻擊全面防護</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">即時行為分析</span>
+                    <span className="text-muted-foreground font-normal">99.99%服務可用性</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">毫秒級響應阻擋</span>
+                    <span className="text-muted-foreground font-normal">毫秒級查詢響應</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">24/7流量監控</span>
+                    <span className="text-muted-foreground font-normal">全球分佈式架構</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">白名單管理</span>
+                    <span className="text-muted-foreground font-normal">24/7即時監控</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
-                    <span className="text-muted-foreground font-normal">智能學習更新</span>
+                    <span className="text-muted-foreground font-normal">AI智能分析</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" style={{ color: "#0D99FF" }} />
@@ -127,7 +117,7 @@ export default function BotDefensePage() {
                 <div className="pt-6">
                   <Link href="/account/purchase">
                     <Button
-                      className="w-full text-white font-normal py-3 text-lg"
+                      className="w-full font-normal py-3 text-lg text-white"
                       style={{ backgroundColor: "#0D99FF", borderColor: "#0D99FF" }}
                       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#0A85E9")}
                       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0D99FF")}
@@ -143,7 +133,7 @@ export default function BotDefensePage() {
           <div className="mt-12 text-center">
             <h3 className="text-2xl font-medium text-foreground mb-4">需要客製化方案？</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8 font-normal">
-              我們的專家團隊將協助您評估網站流量特性，制定最適合的機器人防護策略
+              我們的專家團隊將協助您評估DNS安全需求，制定最適合的DNS防護策略
             </p>
             <Button
               variant="outline"
@@ -177,31 +167,31 @@ function ServiceFeatureItem({ icon, title, description }) {
   )
 }
 
-function BotDefenseAnalytics() {
+function DNSProtectionAnalytics() {
   // 模擬數據
-  const botDetectionData = [
-    { name: "1月", 惡意機器人: 1250, 合法機器人: 380, 正常用戶: 8500 },
-    { name: "2月", 惡意機器人: 1180, 合法機器人: 420, 正常用戶: 9200 },
-    { name: "3月", 惡意機器人: 1350, 合法機器人: 450, 正常用戶: 10500 },
-    { name: "4月", 惡意機器人: 980, 合法機器人: 380, 正常用戶: 11800 },
-    { name: "5月", 惡意機器人: 850, 合法機器人: 420, 正常用戶: 12500 },
-    { name: "6月", 惡意機器人: 720, 合法機器人: 450, 正常用戶: 13200 },
+  const dnsQueryData = [
+    { name: "1月", 正常查詢: 12500, 惡意查詢: 850, 阻擋查詢: 820 },
+    { name: "2月", 正常查詢: 13200, 惡意查詢: 720, 阻擋查詢: 695 },
+    { name: "3月", 正常查詢: 14500, 惡意查詢: 980, 阻擋查詢: 960 },
+    { name: "4月", 正常查詢: 15800, 惡意查詢: 650, 阻擋查詢: 635 },
+    { name: "5月", 正常查詢: 16500, 惡意查詢: 580, 阻擋查詢: 570 },
+    { name: "6月", 正常查詢: 17200, 惡意查詢: 420, 阻擋查詢: 415 },
   ]
 
-  const blockingEfficiencyData = [
-    { name: "1月", 阻擋率: 94.2 },
-    { name: "2月", 阻擋率: 95.8 },
-    { name: "3月", 阻擋率: 96.5 },
-    { name: "4月", 阻擋率: 97.2 },
-    { name: "5月", 阻擋率: 98.1 },
-    { name: "6月", 阻擋率: 98.7 },
+  const responseTimeData = [
+    { name: "1月", 響應時間: 15 },
+    { name: "2月", 響應時間: 12 },
+    { name: "3月", 響應時間: 10 },
+    { name: "4月", 響應時間: 8 },
+    { name: "5月", 響應時間: 6 },
+    { name: "6月", 響應時間: 5 },
   ]
 
-  const botTypeData = [
-    { name: "爬蟲機器人", value: 35, color: "#ef4444" },
-    { name: "刷票機器人", value: 25, color: "#f97316" },
-    { name: "垃圾郵件機器人", value: 20, color: "#eab308" },
-    { name: "其他惡意機器人", value: 20, color: "#dc2626" },
+  const attackTypeData = [
+    { name: "DNS放大攻擊", value: 40, color: "#ef4444" },
+    { name: "DNS隧道攻擊", value: 25, color: "#f97316" },
+    { name: "DNS劫持", value: 20, color: "#eab308" },
+    { name: "其他攻擊", value: 15, color: "#a3a3a3" },
   ]
 
   return (
@@ -209,57 +199,57 @@ function BotDefenseAnalytics() {
       {/* 統計卡片 */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatCard
-          title="阻擋率"
-          value="98.7%"
-          description="本月阻擋成功率"
-          trend="+0.6%"
+          title="阻擋成功率"
+          value="98.8%"
+          description="本月DNS攻擊阻擋率"
+          trend="+0.8%"
           trendType="positive"
           icon={<Shield className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
         <StatCard
-          title="檢測機器人"
-          value="720"
-          description="本月檢測惡意機器人"
-          trend="-15.3%"
+          title="查詢處理量"
+          value="17.6M"
+          description="本月DNS查詢總數"
+          trend="+4.3%"
           trendType="positive"
-          icon={<Bot className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+          icon={<Server className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
         <StatCard
           title="響應時間"
           value="5ms"
-          description="平均檢測響應時間"
+          description="平均DNS查詢響應時間"
           trend="-16.7%"
           trendType="positive"
           icon={<Zap className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
         <StatCard
-          title="保護用戶"
-          value="13,200"
-          description="本月保護正常用戶"
-          trend="+5.6%"
+          title="服務可用性"
+          value="99.99%"
+          description="本月DNS服務可用率"
+          trend="+0.01%"
           trendType="positive"
-          icon={<Users className="h-8 w-8" style={{ color: "#0D99FF" }} />}
+          icon={<TrendingUp className="h-8 w-8" style={{ color: "#0D99FF" }} />}
         />
       </div>
 
-      {/* 圖表區域 - 替換為靜態內容 */}
+      {/* 圖表區域 - 使用靜態內容 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">流量分析</CardTitle>
-            <CardDescription className="text-muted-foreground">過去6個月的流量類型分佈</CardDescription>
+            <CardTitle className="text-xl text-foreground">DNS查詢統計</CardTitle>
+            <CardDescription className="text-muted-foreground">過去6個月的DNS查詢和攻擊阻擋情況</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80 flex items-center justify-center">
               <div className="text-center">
-                <p className="text-muted-foreground mb-4">流量分析圖表</p>
+                <p className="text-muted-foreground mb-4">DNS查詢統計圖表</p>
                 <div className="grid grid-cols-3 gap-4 text-center">
-                  {botDetectionData.map((item, index) => (
-                    <div key={index} className="bg-muted border border-border p-3 rounded-lg">
+                  {dnsQueryData.map((item, index) => (
+                    <div key={index} className="bg-muted p-3 rounded-lg border border-border">
                       <p className="text-foreground font-medium">{item.name}</p>
-                      <p className="text-sm text-blue-400">正常: {item.正常用戶}</p>
-                      <p className="text-sm text-green-400">合法: {item.合法機器人}</p>
-                      <p className="text-sm text-red-400">惡意: {item.惡意機器人}</p>
+                      <p className="text-sm text-green-400">正常: {item.正常查詢}</p>
+                      <p className="text-sm text-red-400">惡意: {item.惡意查詢}</p>
+                      <p className="text-sm text-blue-400">阻擋: {item.阻擋查詢}</p>
                     </div>
                   ))}
                 </div>
@@ -270,18 +260,19 @@ function BotDefenseAnalytics() {
 
         <Card className="shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">阻擋效率趨勢</CardTitle>
-            <CardDescription className="text-muted-foreground">過去6個月的機器人阻擋成功率</CardDescription>
+            <CardTitle className="text-xl text-foreground">響應時間優化</CardTitle>
+            <CardDescription className="text-muted-foreground">DNS查詢響應時間改善趨勢</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-80 flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-muted-foreground mb-4">阻擋效率趨勢圖表</p>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  {blockingEfficiencyData.map((item, index) => (
-                    <div key={index} className="bg-muted border border-border p-3 rounded-lg">
-                      <p className="text-foreground font-medium">{item.name}</p>
-                      <p className="text-sm text-green-400">阻擋率: {item.阻擋率}%</p>
+              <div className="text-center w-full">
+                <p className="text-muted-foreground mb-4">響應時間優化趨勢</p>
+                <div className="flex justify-between items-end h-32 w-full px-4">
+                  {responseTimeData.map((item, index) => (
+                    <div key={index} className="flex flex-col items-center">
+                      <div className="bg-blue-500 w-8" style={{ height: `${(20 - item.響應時間) * 4}px` }}></div>
+                      <p className="text-xs mt-2 text-muted-foreground">{item.name}</p>
+                      <p className="text-xs text-muted-foreground">{item.響應時間}ms</p>
                     </div>
                   ))}
                 </div>
@@ -294,17 +285,17 @@ function BotDefenseAnalytics() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Card className="lg:col-span-1 shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">機器人類型分佈</CardTitle>
-            <CardDescription className="text-muted-foreground">檢測到的惡意機器人類型</CardDescription>
+            <CardTitle className="text-xl text-foreground">攻擊類型分佈</CardTitle>
+            <CardDescription className="text-muted-foreground">檢測到的DNS攻擊類型比例</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-64 flex items-center justify-center">
               <div className="text-center">
-                <p className="text-muted-foreground mb-4">機器人類型分佈圖表</p>
+                <p className="text-muted-foreground mb-4">攻擊類型分佈圖表</p>
                 <div className="grid grid-cols-2 gap-4 text-center">
-                  {botTypeData.map((item, index) => (
-                    <div key={index} className="p-3 rounded-lg bg-muted border border-border">
-                      <p className="text-foreground font-medium">{item.name}</p>
+                  {attackTypeData.map((item, index) => (
+                    <div key={index} className="p-3 rounded-lg" style={{ backgroundColor: `${item.color}30` }}>
+                      <p className="text-foreground font-medium text-sm">{item.name}</p>
                       <p className="text-sm" style={{ color: item.color }}>
                         {item.value}%
                       </p>
@@ -318,43 +309,40 @@ function BotDefenseAnalytics() {
 
         <Card className="lg:col-span-2 shadow-lg bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-xl text-foreground">響應時間優化</CardTitle>
-            <CardDescription className="text-muted-foreground">機器人檢測響應時間改善趨勢</CardDescription>
+            <CardTitle className="text-xl text-foreground">DNS安全事件</CardTitle>
+            <CardDescription className="text-muted-foreground">最近的DNS安全事件記錄</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="h-64 flex items-center justify-center">
-              <div className="text-center w-full">
-                <p className="text-muted-foreground mb-4">響應時間優化趨勢</p>
-                <div className="flex justify-between items-end h-32 w-full px-4">
-                  <div className="flex flex-col items-center">
-                    <div className="bg-blue-500 w-8" style={{ height: "60px" }}></div>
-                    <p className="text-xs mt-2 text-muted-foreground">1月</p>
-                    <p className="text-xs text-muted-foreground">15ms</p>
+            <div className="h-64 overflow-y-auto">
+              <div className="space-y-3">
+                <div className="flex items-start p-3 bg-muted rounded-lg border border-border">
+                  <div className="flex-shrink-0 mr-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-1"></div>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-blue-500 w-8" style={{ height: "48px" }}></div>
-                    <p className="text-xs mt-2 text-muted-foreground">2月</p>
-                    <p className="text-xs text-muted-foreground">12ms</p>
+                  <div>
+                    <p className="text-foreground font-medium text-sm">DNS放大攻擊</p>
+                    <p className="text-muted-foreground text-xs">檢測到來自多個IP的DNS放大攻擊，已成功阻擋</p>
+                    <p className="text-muted-foreground text-xs">2小時前</p>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-blue-500 w-8" style={{ height: "40px" }}></div>
-                    <p className="text-xs mt-2 text-muted-foreground">3月</p>
-                    <p className="text-xs text-muted-foreground">10ms</p>
+                </div>
+                <div className="flex items-start p-3 bg-muted rounded-lg border border-border">
+                  <div className="flex-shrink-0 mr-3">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full mt-1"></div>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-blue-500 w-8" style={{ height: "32px" }}></div>
-                    <p className="text-xs mt-2 text-muted-foreground">4月</p>
-                    <p className="text-xs text-muted-foreground">8ms</p>
+                  <div>
+                    <p className="text-foreground font-medium text-sm">異常查詢模式</p>
+                    <p className="text-muted-foreground text-xs">發現異常的DNS查詢模式，可能為DNS隧道攻擊</p>
+                    <p className="text-muted-foreground text-xs">6小時前</p>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-blue-500 w-8" style={{ height: "24px" }}></div>
-                    <p className="text-xs mt-2 text-muted-foreground">5月</p>
-                    <p className="text-xs text-muted-foreground">6ms</p>
+                </div>
+                <div className="flex items-start p-3 bg-muted rounded-lg border border-border">
+                  <div className="flex-shrink-0 mr-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mt-1"></div>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-blue-500 w-8" style={{ height: "20px" }}></div>
-                    <p className="text-xs mt-2 text-muted-foreground">6月</p>
-                    <p className="text-xs text-muted-foreground">5ms</p>
+                  <div>
+                    <p className="text-foreground font-medium text-sm">系統更新完成</p>
+                    <p className="text-muted-foreground text-xs">DNS防護規則已更新，新增對最新攻擊模式的防護</p>
+                    <p className="text-muted-foreground text-xs">1天前</p>
                   </div>
                 </div>
               </div>

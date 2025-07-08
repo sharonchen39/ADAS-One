@@ -1,0 +1,5 @@
+mode: development
+
+sessionTimeout: 1800
+
+secr: adasonezmjwtsecret@f5
